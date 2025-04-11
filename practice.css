@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Orbitron:wght@400..900&display=swap');
+
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  color: #ccc;
+}
+
+body {
+  height: 100vh;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+/* ===== Background Video ===== */
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.6); /* #111 with opacity */
+  z-index: -1;
+}
+
+/* ===== Sidebar ===== */
+:root {
+  --bg-dark: #111;
+  --text-light: #ccc;
+  --text-white: #ccc;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 14px;
+  background: #111;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px #ccc;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+.sidebar.hide {
+  transform: translateX(-100%);
+}
+
+.sidebar .image-text {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .image-text img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.text.header-text {
+  margin-left: 10px;
+}
+
+.header-text .name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.header-text .profession {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* ===== Toggle Button ===== */
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  
+  color: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ===== Navigation ===== */
+.sidebar .menu {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.sidebar .nav-link {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.sidebar .nav-link a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #ccc;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.sidebar .nav-link a:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+.sidebar .nav-text {
+  font-size: 15px;
+  color: #ccc;
+}
+
+.sidebar .nav-link i {
+  font-size: 18px;
+}
+
+/* ===== Top Menu Bar ===== */
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  height: 50px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 5;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-bar .menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-bar .nav-link a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.menu-bar .nav-link a:hover {
+  color: #ccc;
+}
+
+/* ===== Main Content ===== */
+section {
+  margin-left: 250px;
+  padding: 60px;
+  background-color: #111;
+}
+
+/* ===== Accent Span Text ===== */
+span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: medium;
+  color: #fff;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .menu-bar {
+    left: 200px;
+  }
+
+  section {
+    margin-left: 200px;
+    padding: 40px;
+  }
+
+  .sidebar .nav-text {
+    font-size: 14px;
+  }
+}
+
