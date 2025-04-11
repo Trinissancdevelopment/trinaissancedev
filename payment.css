@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Orbitron:wght@400..900&display=swap');
+
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  color: #eaeaea;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* ===== Background Video ===== */
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* ===== Header & Paragraph Styling ===== */
+h1, h2 {
+  font-family: 'Anton', sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 5px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+p {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: small;
+  color: #ccc;
+  background-color: #1111118c;
+  margin: 50px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* ===== Sidebar Styling ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 14px;
+    background: #111;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+.sidebar.hide {
+  transform: translateX(-100%);
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.image-text img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.text.header-text {
+  margin-left: 10px;
+}
+
+.text.header-text .name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text.header-text .profession {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ===== Navigation ===== */
+.sidebar .menu {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.sidebar .nav-link {
+  margin: 15px 0;
+}
+
+.sidebar .nav-link a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ccc;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.sidebar .nav-link a:hover {
+  background-color: #ccc;
+  color: #111;
+}
+
+.sidebar .nav-link i {
+  font-size: 18px;
+}
+
+/* ===== Top Menu Bar ===== */
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    height: 50px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 5;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-bar .menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-bar .menu .nav-link a {
+  color: #ccc;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu-bar .menu .nav-link a:hover {
+  color: #ccc;
+}
+
+/* ===== Content Sections ===== */
+section {
+  margin-left: 260px;
+  padding: 60px 80px;
+}
+
+/* ===== Table Styles (if needed) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+thead {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+th {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+td {
+  color: #ccc;
+  font-size: 15px;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: background 0.3s ease;
+}
+
+/* ===== Responsive Sidebar Collapse ===== */
+.sidebar.hide + .menu-bar {
+  left: 80px;
+}
+
+.sidebar.hide ~ section {
+  margin-left: 80px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .menu-bar {
+    left: 200px;
+  }
+
+  section {
+    margin-left: 200px;
+    padding: 40px;
+  }
+}
